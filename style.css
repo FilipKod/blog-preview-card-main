@@ -17,6 +17,115 @@
   --color-white: hsl(0, 0%, 100%);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   background-color: var(--color-yellow);
+  font-family: Figtree, sans-serif;
+  font-size: 16px;
+  color: var(--color-gray-950);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 24px;
+  margin: 0;
+}
+
+p,
+h2 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+article {
+  background-color: var(--color-white);
+  max-width: 384px;
+  width: 100%;
+  min-width: 327px;
+  border: 1px solid var(--color-gray-950);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 24px;
+  box-shadow: 8px 8px 0 0 #000;
+}
+
+.thumbnail {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.thumbnail img {
+  display: block;
+}
+
+.content {
+  display: grid;
+  row-gap: 12px;
+  margin: 24px 0;
+}
+
+.content .tags span {
+  background-color: var(--color-yellow);
+  color: var(--color-gray-950);
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+.content .date {
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.content h2 {
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.content p {
+  color: var(--color-gray-500);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.author {
+  line-height: 1.5;
+  font-size: 0.875rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.author img {
+  --image-size: 32px;
+  width: var(--image-size);
+  height: var(--image-size);
+  margin-right: 12px;
+}
+
+/* Responsive fonts with clamp */
+.content .date,
+.content .tags span {
+  font-size: clamp(0.75rem, -0.0184rem + 3.2787vw, 0.875rem);
+}
+
+.content h2 {
+  font-size: clamp(1.25rem, -0.2869rem + 6.5574vw, 1.5rem);
+}
+
+.content p {
+  font-size: clamp(0.875rem, 0.1066rem + 3.2787vw, 1rem);
 }
