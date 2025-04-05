@@ -83,6 +83,7 @@ article {
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
   line-height: 1.5;
+  display: inline-block;
 }
 
 .content .date {
